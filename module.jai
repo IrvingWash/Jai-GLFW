@@ -69,7 +69,7 @@ window_hint :: (
 create_window :: (
     width:   u32,
     height:  u32,
-    $$title:   string,
+    $$title: string,
     monitor: *Monitor = null,
     share:   *Window  = null
 ) -> *Window {
@@ -117,11 +117,13 @@ set_framebuffer_size_callback :: (
     callback: Framebuffer_Size_Proc
 ) #foreign glfw "glfwSetFramebufferSizeCallback";
 
-get_key :: (window: *Window, key: Key) -> Key_Action #foreign glfw "glfwGetKey";
+get_key :: (
+    window: *Window, key: Key
+) -> Key_Action #foreign glfw "glfwGetKey";
 
 set_window_should_close :: (
     window: *Window,
-    value: int
+    value:  int
 ) #foreign "glfwSetWindowShouldClose";
 
 get_proc_address :: (
@@ -130,14 +132,14 @@ get_proc_address :: (
 
 set_input_mode :: (
     window: *Window,
-    mode: Input_Mode_Name,
-    value: Input_Mode_Value
+    mode:   Input_Mode_Name,
+    value:  Input_Mode_Value
 ) #foreign glfw "glfwSetInputMode";
 
 set_cursor_position :: (
     window: *Window,
-    x: float64,
-    y: float64
+    x:      float64,
+    y:      float64
 ) #foreign glfw "glfwSetCursorPos";
 
 set_cursor_position_callback :: (
@@ -146,7 +148,7 @@ set_cursor_position_callback :: (
 ) #foreign glfw "glfwSetCursorPosCallback";
 
 set_scroll_callback :: (
-    window: *Window,
+    window:   *Window,
     callback: Scroll_Proc
 ) #foreign glfw "glfwSetScrollCallback";
 
@@ -155,11 +157,11 @@ set_scroll_callback :: (
 #import "Basic";
 
 glfwCreateWindow :: (
-    width: s32,
-    height: s32,
-    title: *u8,
+    width:   s32,
+    height:  s32,
+    title:   *u8,
     monitor: *Monitor,
-    share: *Window
+    share:   *Window
 ) -> *Window #foreign glfw;
 
 #if OS == .MACOS {
