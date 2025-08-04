@@ -11,6 +11,7 @@ Hand-crafted GLFW bindings for Jai.
 
 ## Usage
 Put the contents of this repo either in your `jai/modules` or in a `modules` directory in your project dir. There are other ways, but if you need them, you should already know how to achieve that.
+You also need GLFW binaries either in your PATH or to place them beside your executable.
 
 ## Examples
 Refer to the examples directory to see the most basic usage - creating a window and drawing a triangle using OpenGL.
